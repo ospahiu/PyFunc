@@ -18,3 +18,9 @@ def bucket_on_conditions(sequence, conditions):
             if condition(item):
                 buckets[index].append(item)
     return buckets
+
+def zip_with(function, sequence_one, sequence_two):
+    for first, second in zip(sequence_one, sequence_two):
+        yield function(first, second)
+
+print zip_with(lambda x, y: x + y, [1, 2, 3], [1, 2, 3])
